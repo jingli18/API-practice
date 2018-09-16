@@ -20,8 +20,8 @@ search_results = api.search(q='Zelda',count=1)
 for tweet in search_results:
 	print(tweet)
 
-#media_files = set()
-#for status in tweepy.Cursor(api.home_timeline,screen_name='Zelda').items(250):
-#    if 'media' in status.entities:
-#        for image in status.entities['media']:
-#            print(image['media_url'])
+media_files = set()
+for status in tweepy.Cursor(api.home_timeline,screen_name='Zelda').items(20):
+    if 'media' in status.entities:
+    	for image in status.entities['media']:
+        	print(image['media_url'])
