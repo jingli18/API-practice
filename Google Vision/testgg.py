@@ -32,14 +32,15 @@ for n in range(16):
 
 	def add_num(img):
 		draw = ImageDraw.Draw(img)
-		ttFont = ImageFont.truetype('/home/ece-student/Desktop/Important.ttf', size=60)
+		ttFont = ImageFont.truetype('/home/ece-student/Desktop/Important.ttf', size=45)
 		fillcolor = "#3498DB"
-		width, height = img.size
+		width = 1500
+		height = 1000
 		i = 0
 		for label in labels:
-			draw.text((width-1100, 100+i), label.description, fill=fillcolor, font=ttFont)
+			draw.text((width-1490, height-990+i), label.description, fill=fillcolor, font=ttFont)
 			img.save('result.jpg','jpeg')
-			i=i+80
+			i=i+50
 		return 0
 	
 	if __name__ == '__main__':
