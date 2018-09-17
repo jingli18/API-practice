@@ -26,3 +26,23 @@ labels = response.label_annotations
 print('Labels:')
 for label in labels:
     print(label.description)
+
+from PIL import Image, ImageDraw, ImageFont
+
+def add_num(img):
+    draw = ImageDraw.Draw(img)
+    ttFont = ImageFont.truetype('/home/ece-student/Desktop/Important.ttf', size=60)
+    fillcolor = "#3498DB"
+    width, height = img.size
+    i = 0
+#    for label in labels:
+    	draw.text((width-1100, 100+i), "He is a brother-in-brother", fill=fillcolor, font=ttFont)
+    	img.save('result.jpg','jpeg')
+    	i=i+80
+
+    return 0
+if __name__ == '__main__':
+    image = Image.open('/home/ece-student/Desktop/guo.jpg')
+    add_num(image)
+    image.show()
+
