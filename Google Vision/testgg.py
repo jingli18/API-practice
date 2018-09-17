@@ -36,16 +36,21 @@ for n in range(16):
 		fillcolor = "#3498DB"
 		width = 1500
 		height = 1000
+		img = img.resize((width,height), Image.ANTIALIAS)
 		i = 0
 		for label in labels:
-			draw.text((width-1490, height-990+i), label.description, fill=fillcolor, font=ttFont)
-			img.save('result.jpg','jpeg')
+			draw.text((-1490, 90+i), label.description, fill=fillcolor, font=ttFont)
+		#	img.save('result.jpg','jpeg')
 			i=i+50
+		savepath = os.path.join('/home/ece-student/Desktop/video/',imgfile)
+		img.save(savepath)
 		return 0
 	
 	if __name__ == '__main__':
 		
 		image = Image.open(pathimg)
 		add_num(image)
-		image.show()
+	#	image.show()
+	savepath = os.path.join('/home/ece-student/Desktop/',)
+		
 	n=n+1
