@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-
+import os
 def add_num(img):
     draw = ImageDraw.Draw(img)
     ttFont = ImageFont.truetype('/home/ece-student/Desktop/Important.ttf', size=96)
@@ -10,7 +10,10 @@ def add_num(img):
 
     return 0
 if __name__ == '__main__':
-    image = Image.open('/home/ece-student/Desktop/guo.jpg')
+    i=0
+    imgfile=str(i)+'.jpg'
+    pathimg=os.path.join('/home/ece-student/Desktop/',imgfile)
+    image = Image.open(pathimg)
     add_num(image)
     image.show()
 
