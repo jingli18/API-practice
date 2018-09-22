@@ -40,7 +40,11 @@ imgpath1= imgpath + "/img/"
 imgpath2= imgpath + "/img2/"
 urllist=[]
 media_files = set()
-for status in tweepy.Cursor(api.home_timeline,screen_name='tomb').items(60):
+screen_name =input("please input name: ")
+tweetNum = input("Please input the number: ")
+tweets = api.user_timeline(id = screen_name, count = tweetNum)
+for status in tweets:
+#for status in tweepy.Cursor(api.home_timeline,screen_name=screen_name).items(60):
 	if 'media' in status.entities:
 		for image in status.entities['media']:
 			urllist.append(image['media_url'])
@@ -49,6 +53,7 @@ for m in range(len(urllist)):
 	print(urllist[m])
 	jpg_link = urllist[m]  
 	request.urlretrieve(jpg_link, imgpath1+'%s.jpg' %m)
+	
 	imgfile=str(m)+'.jpg'
 	downpath = os.path.join(imgpath1,imgfile)
 	img= Image.open(downpath)
