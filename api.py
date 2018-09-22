@@ -1,8 +1,11 @@
 #!/usr/bin/env python
+import os
 from urllib import request
 import tweepy
 import json
 from urllib import request
+import PIL
+from PIL import Image
 
 consumer_key = "JgOX6hGUqwuinsCNhWqH3kfyx"
 consumer_secret = "T2N12J3UfcFCTsOWWbN7H6CUW3rT4kJLfPUty1gi5QT4gUbj22"
@@ -38,3 +41,9 @@ for m in range(len(urllist)):
 	print(urllist[m])
 	jpg_link = urllist[m]  #图片链接
 	request.urlretrieve(jpg_link, '/home/ece-student/Desktop/api/'+'%s.jpg' %m)
+	imgfile=str(m)+'.jpg'
+	downpath = os.path.join('/home/ece-student/Desktop/api/',imgfile)
+	img= Image.open(downpath)
+	img = img.resize((1500,1000), Image.ANTIALIAS)
+	savepath = os.path.join('/home/ece-student/Desktop/jpg/',imgfile)
+	img.save(savepath)
