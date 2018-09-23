@@ -10,5 +10,5 @@ Tweepy, PIL, ffmpeg
 ## **How to use:**
 1.Download all repository.<br>
 2.Make sure you have all the tools listed in "What you need"<br>
-3.Just run the Miniproject1.py!
+3.Just run the Miniproject1.py!<br>
 4.The final videw will be in the "tagimg" folder!
