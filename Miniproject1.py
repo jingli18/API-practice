@@ -11,6 +11,16 @@ from PIL import Image, ImageDraw, ImageFont
 from google.cloud import vision
 from google.cloud.vision import types
 
+keypat = os.getcwd()
+keypath1 = keypat + '/img'
+keypath2 = keypat + '/img2'
+keypath3 = keypat + '/tagimg'
+os.makedirs(keypath1)
+os.makedirs(keypath2)
+os.makedirs(keypath3)
+
+print ('Folder Created Successfully!')
+
 
 #get keys from txt
 keypath = os.getcwd()
