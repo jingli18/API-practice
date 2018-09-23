@@ -8,6 +8,7 @@ tags on pictures. Fianlly, you will get a video made from these images.
 Tweepy, PIL, ffmpeg
 <br>
 ## **How to use:**
-1.download all repository.
-2.Make sure you have all the tools listed in "What you need"
-3.just run the Miniproject1.py!
+1.Download all repository.<br>
+2.Make sure you have all the tools listed in "What you need"<br>
+3.Just run the Miniproject1.py!
+4.The final videw will be in the "tagimg" folder!
