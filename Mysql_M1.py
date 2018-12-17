@@ -10,6 +10,47 @@ import pymongo
 #from google.cloud import vision
 #from google.cloud.vision import types
 
+def create_datebase():
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        passwd="12345678"
+    )
+    mycursor = mydb.cursor()
+    mycursor.execute("CREATE DATABASE twitter_mysql")
+
+    mycursor.execute("SHOW DATABASES")
+    for x in mycursor:
+        print(x)
+
+def create_table():
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        passwd="12345678",
+        database= 'twitter_mysql'
+    )
+    mycursor = mydb.cursor()
+    sql1 = '''
+        CREATE TABLE user(
+        id int(5) primary key,
+        username VARCHAR(255))
+    '''
+    mycursor.execute(sql1)
+    sql2 = '''
+        CREATE TABLE activity(
+        username VARCHAR(255),
+        searchID VARCHAR(255),
+        searchNum VARCHAR(255),
+        searchDate VARCHAR(255),
+        imageNum VARCHAR(255))
+        -- primary key(username,searchDate))
+    '''
+    mycursor.execute(sql2)
+
+    mycursor.execute("SHOW TABLES")
+    for x in mycursor:
+        print(x)
 
 
 try:   
@@ -206,47 +247,6 @@ def mongodb(self):
         else:
             self.implement()
 
-def create_datebase():
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="12345678"
-    )
-    mycursor = mydb.cursor()
-    mycursor.execute("CREATE DATABASE twitter_mysql")
-
-    mycursor.execute("SHOW DATABASES")
-    for x in mycursor:
-        print(x)
-
-def create_table():
-    mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        passwd="12345678",
-        database= 'twitter_mysql'
-    )
-    mycursor = mydb.cursor()
-    sql1 = '''
-        CREATE TABLE user(
-        id int(5) primary key,
-        username VARCHAR(255))
-    '''
-    mycursor.execute(sql1)
-    sql2 = '''
-        CREATE TABLE activity(
-        username VARCHAR(255),
-        searchID VARCHAR(255),
-        searchNum VARCHAR(255),
-        searchDate VARCHAR(255),
-        imageNum VARCHAR(255))
-        -- primary key(username,searchDate))
-    '''
-    mycursor.execute(sql2)
-
-    mycursor.execute("SHOW TABLES")
-    for x in mycursor:
-        print(x)
 
 def res():
 
@@ -263,6 +263,9 @@ def res():
 restart = True
 if restart:
     res()
+
+#Test user_list
+
 for i in range(10):
     username = choice(user_list)
     user = twitter_API(username)
