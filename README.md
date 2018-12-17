@@ -11,4 +11,7 @@ Tweepy, PIL, ffmpeg
 1.Download all repository.<br>
 2.Make sure you have all the tools listed in "What you need"<br>
 3.Just run the Miniproject1.py!<br>
-4.The final videw will be in the "tagimg" folder!
+4.The final videw will be in the "tagimg" folder!  
+# **Database Part：**  
+MonglDB: Mongldb.py  
+MySQL: Mysql_M1.py
